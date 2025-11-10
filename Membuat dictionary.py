@@ -1,51 +1,53 @@
-#array
-# Program array dua dimensi: data nilai siswa
+# Array 
+mahasiswa = ["ana", "fuad", "yemima", "tya", "chya"]
 
-# Membuat array 2D (list di dalam list)
-nilai_siswa = [
-    ["mute", 80, 90, 85],
-    ["jere", 75, 88, 92],
-    ["tyaa", 90, 95, 93],
-    ["rahma", 70, 80, 78]
-]
+# Menampilkan semua nama
+print("Daftar Mahasiswa:", mahasiswa)
 
-# Menampilkan semua data
-print("=== Data Nilai Siswa ===")
-for data in nilai_siswa:
-    print(f"Nama: {data[0]}, Nilai 1: {data[1]}, Nilai 2: {data[2]}, Nilai 3: {data[3]}")
+# Mengakses 
+print("Mahasiswa pertama:", mahasiswa[0])
 
-# Menghitung rata-rata tiap siswa
-print("\n=== Rata-Rata Nilai ===")
-for data in nilai_siswa:
-    nama = data[0]
-    rata = (data[1] + data[2] + data[3]) / 3
-    print(f"{nama}: {rata:.2f}")
+# Menambah data 
+mahasiswa.append("hijria")
+print("Setelah ditambah:", mahasiswa)
 
+# Menghapus 
+mahasiswa.remove("fuad")
+print("Setelah fuad dihapus:", mahasiswa)
 
+# Dictionary 
+mahasiswa = {
+    "nama": "cyntia angreni",
+    "nim": "D0425315",
+    "jurusan": "Teknik Sistem Informasi",
+    "kelas": " A ",
+    "angkatan": 2025,
+    "alamat": "Mamasa, Sulawesi Barat",
 
+    "nilai": {
+        "algoritma_pemrograman": 98,
+        "struktur_data": 78,
+        "basis_data": 80,
+        "pemrograman_python": 90
+    },
 
+    "mata_kuliah_diambil": [
+        "Algoritma Pemrograman",
+        "Basis Data",
+        "Pemrograman Python",
+        "Kalkulus Informatika"
+    ]
+}
 
-# Membuat dictionary
-my_dict = {'nama': 'cyntia', 'usia': 20, 'kota': 'mamasa'}
+# Menampilkan seluruh data
+print("\nData Mahasiswa:", mahasiswa)
 
-# Mengakses value berdasarkan key
-print(my_dict['nama'])  # Output: cyntia
+# Mengakses data
+print("Nama:", mahasiswa["nama"])
+print("Kelas:", mahasiswa["kelas"])
+print("Nilai Python:", mahasiswa["nilai"]["pemrograman_python"])
 
-# Menambah pasangan key-value
-my_dict['pekerjaan'] = 'mahasiswa'
-print(my_dict)  # Output: {'nama': 'cyntia', 'usia': 20, 'kota': 'mamasa', 'pekerjaan': 'mahasiswa'
-# Mengubah value
-my_dict['usia'] = 20
-print(my_dict)  # Output: {'nama': 'cyntia', 'usia': 20, 'kota': 'mamasa', 'pekerjaan': 'mahasiswa'}
+# Update nilai
+mahasiswa["nilai"]["pemrograman_python"] = 98
+print("Nilai Python Setelah Update:", mahasiswa["nilai"]["pemrograman_python"])
 
-# Menghapus pasangan
-del my_dict['kota']
-print(my_dict)  # Output: {'nama': 'cyntia', 'usia': 20, 'pekerjaan': 'mamasa'}
-
-# Iterasi
-for key, value in my_dict.items():
-    print(f"{key}: {value}")
-# Output:
-# nama: cyntia
-# usia: 20
-# pekerjaan: mahasiswa
